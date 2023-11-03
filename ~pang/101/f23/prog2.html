@@ -1,0 +1,270 @@
+<HTML>
+<HEAD>
+<TITLE>CSE 101 -- Fall 2023</TITLE>
+</HEAD>
+<BODY background="slug.gif">
+<CENTER>
+<P>
+<H2><B>CSE 101 -- Prog 2</B></H2>
+<H3>
+Due before midnight, Sunday, November 12, 2023.
+<br>
+Late submissions will not be accepted/graded. 
+</H3>
+<IMG SRC="http://users.soe.ucsc.edu/~pang/images/line.jpg", width=700, height=10>
+</CENTER>
+<!-- <H2>STILL IN PROGRESS</H2> -->
+<H3>
+Objectives:
+</H3>
+Implement a Priority Queue ADT using heap for a bus transportation system simulation, where multiple buses transport people to various stops.
+<H3>
+Description:
+</H3>
+This program will require you to implement Priority Queue ADT using heap and an application 
+that uses your implementation. The application is a bus transportation system where we have multiple buses transporting people across different stops. The goal is to load people onto buses based on their destination, age, and ticket type, ensuring efficient transportation of passengers to their intended destinations. We will simulate this process and look into how a priority queue can be used to efficiently manage the transportation of passengers.
+<H3>
+Details:
+</H3>
+<ul>
+<li>
+As before, input will be from stdin and output will be to stdout. 
+</li>
+<!-- <li>
+<p>
+<b>Queue ADT:</b>
+
+Both Queue.h and Queue.c are from your hwk2 and are needed by the simulator.
+</li>
+</p> -->
+
+<br>
+<li>
+<b>Heap:</b>
+<br>
+Heap is a data structure that maintains an ordering of elements.
+You will use Heaps to implement priority queue.
+This will be a <b>max heap</b> similiar to the textbook.
+For this assignment, you will complete the interface provided in
+<a href=Heap.h>Heap.h</a>
+and the implementation in <a href=Heap.c>Heap.c</a>.
+</li>
+
+<! -- removed -- >
+<! Bonus:>
+<! Earn 10 extra points by implementing the heap sort algorithm.>
+
+<br>
+<li>
+<b>Priority Queue ADT:</b>
+<br>
+Unlike the sequential processing of items in a queue, a priority queue would
+process items in the order of their priority or value 
+(also known as keys).
+For instance, in a quiz-taking strategy setting, students might prioritize questions based on their point value, or they might tackle problems they feel most confident about first. 
+ You can implement the operations supported by a priority queue using the heap that you 
+developed. These include the ones mentioned in the <a href=PriorityQueue.h>PriorityQueue.h</a> which you will implement in 
+the <a href=PriorityQueue.c>PriorityQueue.c</a> file.
+
+</li>
+</p>
+
+</li>
+<li>
+<b>Application: Bus Transportation System</b>
+<p>This part requires you to develop a system where several buses transport people across different stops. The goal is to load people onto buses based on their destination, age, and ticket type, ensuring efficient transportation of passengers to their intended destinations.</p>
+
+<H3>Details:</H3>
+
+<H4>Stops:</H4>
+<ul>
+    <li>Each stop is named sequentially starting with A, B, C, and so on.</li>
+    <li>For each stop, a file will provide details of the people waiting. This file will contain names, list of destinations (in order), ages, and ticket types for each person. Note that a person can have multiple stops they wish to go to.</li>
+    <H5>Sample Input for a Stop:</H5>
+	<p>This sample input represents the people waiting at stop A:</p>
+	<ul>
+	    <li>Each line represents an individual person waiting at the stop.</li>
+	    <li>The first column provides the person's name.</li>
+	    <li>The second column lists the sequence of stops they wish to travel to. For instance, John wants to travel to stops `B` and then `C`.</li>
+	    <li>The third column mentions the age of the person. John is 25 years old, and Jane is 29 years old.</li>
+	    <li>The fourth column specifies the ticket type the individual possesses, which can be either `economy` or `business`.</li>
+	</ul>
+	<pre>
+	<strong>stopA.in</strong>
+	John|B,C|25|economy
+	Jane|C|29|business
+	</pre>
+
+</ul>
+
+<H4>Bus:</H4>
+<ul>
+    <li>The total number of buses is provided.</li>
+    <li>For each bus, the number of business class and economy class seats is given. Each bus also has a list of stops it will cover.</li>
+    <li>Once a bus reaches its final destination, it returns to its starting point.</li>
+    <li>At every timestamp, each bus advances by one step. If the current stop isn't on the bus's list, it won't stop there.</li>
+    <li>When the bus reaches a stop it caters to, it checks if people need to be dropped off or taken in.</li>
+    <strong>Note:</strong>You need to use two priority queues to hold the list of people at a stop. One for the business class people, and one for the economy class people. The priority will be given via age i.e older people will have a higher priority, hence the max heap. 
+    <br>
+    <ul>
+	    <li><strong>Drop</strong>: Drop off passengers whose current destination matches the bus stop. Update their list of destinations. If they have no more destinations left, they exit the system.</li>
+	    <li><strong>Entry</strong>: If there are available seats based on the passengers' ticket types, allow passengers to board. Entry is determined based on priority. Priority is first based on age. In the event of a tie, priority goes to whoever was in the queue first. Ensure that the bus covers the passenger's next destination.</li>
+    </ul>
+    <H5>Sample Bus Configuration Input:</H5>
+	<p>The first line lists all the possible stops in the system. In this case, there are stops: <code>A, B, C, D, E, F, G, H</code>.<br>
+	The second line specifies the total number of buses in the system. In this example, there are <code>2</code> buses.<br>
+	Following lines detail each bus:</p>
+	<ul>
+	    <li><code>Bus1</code>: It has <code>10</code> business class and <code>15</code> economy class seats. Its starting stop is <code>A</code>. It stops at <code>A, B, C,</code> and <code>D</code>.</li>
+	    <li><code>Bus2</code>: It has <code>5</code> business class and <code>10</code> economy class seats. Its starting stop is <code>A</code>. It stops at <code>A, C,</code> and <code>D</code>.</li>
+	</ul>
+	<pre>
+	<strong>busconfig.in</strong>
+	A,B,C,D,E,F,G,H
+	2
+	Bus1|10,15|A|ABCD
+	Bus2|5,10|A|ACD
+	</pre>
+
+</ul>
+
+<H4>Output:</H4>
+<ul>
+    <li>For each bus, generate a file named busname.out (where busname is the name of the bus). <br>This file will have:</li>
+    <ul>
+	    <li>The state of the bus at each timestamp before loading/unloading passengers.</li>
+	    <li>If the bus doesn't actually stop at a station, repeat the previous state.</li>
+	</ul>
+    <H5>Sample Output for a Bus:</H5>
+	<p>This sample output demonstrates the state of Bus1 at different timestamps:</p>
+	<ul>
+	    <li>The first column specifies the timestamp. The simulation starts at timestamp <code>0</code>.</li>
+	    <li>The second column provides details about the passengers on the bus at that particular timestamp. It lists the passengers by name and their ticket type.</li>
+	    <li>For instance, at timestamp <code>0</code>, the bus is empty. At timestamp <code>1</code>, John with an economy class ticket is onboard, along with Jane who has a business class ticket.</li>
+	</ul>
+	<pre>
+	<strong>Bus1.out</strong>
+	0|Empty
+	1|Jane(business) John(economy)
+	</pre>
+</ul>
+
+
+<h4>Example input/output files:</h4>
+<ul>
+    <li><a href = "busconfig.in">busconfig.in</a>: The input file containing a list of stops, the number of buses, and the details of each bus.</li>
+    <li><a href = "stopA.in">stopA.in</a>: The details of people at stop A at the start of the program.</li>
+    <li><a href = "stopB.in">stopB.in</a>: The details of people at stop B at the start of the program.</li>
+    <li><a href = "stopC.in">stopC.in</a>: The details of people at stop C at the start of the program.</li>
+    <li><a href = "bus0.out">bus0.out</a>: Periodic state of bus 0 at every time stamp.</li>
+    <li><a href = "bus1.out">bus1.out</a>: Periodic state of bus 1 at every time stamp.</li>
+</ul>
+
+<H4>Implementation Steps (Algorithm)</H4>
+<ul>
+    <li>You start off by reading the busconfig.in file from stdin. </li>
+    <ul>
+        <li>The first line will contain the list of all the bus stops. The maximum stops can be 26 (Anywhere from A-Z). In the provided example, we have 3 stops (A, B, C)</li>
+        <li>The next line contains the number of buses (lets say x)</li>
+        <li>You will read x lines from this point, each line denoting a bus.</li>
+        <li>Read each line and initialize each bus item, using the above methodology for initializing buses</li>
+    </ul>
+    <br>
+    <li>You then read a file for each stop</li>
+    <ul>
+        <li>Each line will contain information about each passenger.</li>
+        <li>Each of the items has their own significance. For example, the 3rd column, denoting the age of the person will be used as their priority</li>
+    </ul>
+    <br>
+    <li>Each person will have a list of destinations they would like to go to. Within that list, there would be a next destination that they would like to go to.</li>
+    <ul>
+        <li>Each bus will have a list of valid destinations it can go to. Each person will also have a list of destinations. If a person's next destination does not match the valid destinations of a bus, the bus does not consider loading that person.</li>
+        <li>Because of this, lets say a bus reaches a station, but the people with top n priorities have their next destinations which are not valid destinations as per the bus. So they get removed and added to a temp priority queue, till all the seats of the bus have been filled by people whose next destination is a valid destination for the bus, based on their ages, or there are no more people left in the main priority queue. Once one of these two conditions is met, people are shifted back from the temp priority queue to the main priority queue.</li>
+        <li>There will be 2 priority queues per stop, one for the business class people, one for the economy class passengers.</li>
+    </ul>
+    <br>
+    <li>Each of the buses will have a starting stop. After every time stamp, each bus stops at the next possible stop. All the bus keep doing this moving from one stop to the next, till there are no more people left in the system.</li>
+    <li>When a bus reaches a stop, it writes down its current state in its respective outfile. The state includes the current timestamp in the first column, followed by the name and type of seat of all the people in the bus currently.</li>
+    <ul>
+        <li>The names and seat types are written based on the type of ticket and age. Business class people with the highest age are written first, followed by business class people with lower age, followed by economy class people with higher age, followed by economy class people with lower age.</li>
+    </ul>
+    <br>
+    <li>After writing the state, the bus checks if its a valid stop for it. If it is:</li>
+    <ul>
+        <li>it first drops of people who have that stop as their next destination, and removes that destinaton from each of their destination lists.</li>
+        <li>It then loads all the people who have one of the valid destinations of the bus as their next destination</li>
+    </ul>
+    <li>If its not a valid stop, the bus continues moving. </li>
+    <li>You handle buses per stop one by one, starting from bus0 and so on. There can be multiple buses reaching the same stop, or each bus reaching a different stop. You need to track the current stop of each bus. Regardless of how many buses are reaching the stop at the same time, you handle each bus starting from bus0, bus1 and so on.</li>
+    <li>This continues, till all the people in the system have been dropped to all their destinations.</li>
+        
+</ul>
+
+<H3>Files for this program:</H3>
+<p>The following files are provided to you, and should all be submitted with your work:</p>
+<ul>
+    <li><a href="Makefile">Makefile</a>: Makefile for compiling your code. Do not change this file.</li>
+    <li><a href="Heap.h">Heap.h</a>: Do not change this file. It has a list of functions that you need to implement for the Heap.</li>
+    <li><a href="Heap.c">Heap.c</a>: This is where you define the Heap struct and implement your Heap.</li>
+    <li><a href="PriorityQueue.h">PriorityQueue.h</a>: Do not change this file. It has a list of functions that you need to implement for the Priority Queue ADT.</li>
+    <li><a href="PriorityQueue.c">PriorityQueue.c</a>: This is where you define the Priority Queue struct and implement your Priority Queue ADT.</li>
+    <li><a href="simulator.c">simulator.c</a>: This file implements the simulator for the bus transportation system, simulating the movement and interactions of buses and passengers across different stops.</li>
+</ul>
+</li>
+</ul>
+
+<h3>FAQs:</h3>
+<ol>
+</ol>
+
+<! ======================================>
+
+<P>
+<h3>Rubrics (Needs modification after solution is available):</h3>
+<ul>
+    <li>22 points for the Heap. There are a total of 11 functions. Each function is worth 2 points.</li>
+    <li>8 points for the Priority Queue. There are a total of 4 functions. Each function is worth 2 points.</li>
+    <li>50 points for 5 test cases:
+        <ul>
+            <li>10 points: Basic functionality (e.g., can the program read input files and produce any output?)</li>
+            <li>10 points: Proper bus passenger loading/unloading based on age priority.</li>
+            <li>10 points: Handling multiple buses and multiple stops.</li>
+            <li>10 points: Proper functioning of the priority queue in a complex scenario (e.g., when multiple passengers have the same age).</li>
+            <li>10 points: Edge cases (e.g., no passengers at a stop, bus with no stops, etc.)</li>
+        </ul>
+    </li>
+    <li>10 points for following all the instructions correctly.</li>
+    <li>10 points for comments and well-documented code.</li>
+</ul>
+
+
+</li>
+<! ================================================================== >
+
+<h4>Who graded your assignment based on your last name:</h4>
+<pre>
++++:   a* - j*
++++:  k* - m*
++++:   n* - z*
+</pre>
+
+<h3>Submission:</h3>
+<ul>
+    <li>Make sure that you've compiled and tested your code on the campus unix timeshare before submitting. On the unix timeshare, put materials in a folder named <strong>prog2</strong>.</li>
+    <li>In the same directory where you have the <strong>prog2</strong> folder, the following command will recursively archive the contents of your prog2 folder into a file named prog2.zip
+    <br>
+    <tt>zip -r prog2.zip prog2</tt></li>
+    <li>Submit prog2.zip on Canvas under program 2. You can submit as often as you want up until the deadline. We will only look at your most recent submission.</li>
+<! ================================================================== >
+
+<HR>
+
+<H4>
+<p>
+Last modified
+<I>Friday, 10-Oct-2023 22:18:32 PDT.</I>
+<IMG ALIGN=BOTTOM SRC="http://users.soe.ucsc.edu/~pang/slug-icon.gif">
+</H4>
+
+</BODY>
+</HTML>

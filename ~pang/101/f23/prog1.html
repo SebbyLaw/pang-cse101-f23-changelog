@@ -1,0 +1,250 @@
+<HTML>
+<HEAD>
+<TITLE>CSE 101 -- Fall 2023</TITLE>
+</HEAD>
+
+<! BODY background="slug.gif">
+
+<CENTER>
+<P>
+<H2><B>CSE 101 -- Prog 1</B></H2>
+
+<H3>
+Due before midnight, Sunday, October 22, 2023.
+<br>
+Late submissions will not be accepted/graded. 
+</H3>
+
+
+<IMG SRC="http://users.soe.ucsc.edu/~pang/images/line.jpg", width=700, height=10>
+</CENTER>
+
+<! ================================================================== >
+<H3>
+Changelog:
+</H3>
+<ul>
+<li>
+<b>Oct 11, 2023:</b>
+Graders are assigned.
+<br>
+</ul>
+<ul>
+<li>
+<b>Oct 12, 2023:</b>
+Added instructions on handling files, and provide an input example.
+<br>
+</ul>
+<ul>
+<li>
+<b>Oct 17, 2023:</b>
+Clarified descriptions.
+<br>
+</ul>
+<H3>
+Objectives:
+</H3>
+
+Use your List ADT in an application.
+
+<! ================================================================== >
+
+
+<H3>
+Description:
+</H3>
+Write a program that uses the List ADT to produce formatted text.
+The program will be reading from stdin.
+Input will consist of a filename that specifies the file containing text to be formatted.
+This is followed by commands to either format the text or to exit the program.
+Details below.
+</H3>
+
+<! --------------------------------->
+<ul>
+
+<li>
+<strong>Sample Input:</strong> A sample command file named <a href="commands.in">commands.in</a> is provided.
+Inside the <tt>commands.in</tt> file, it specifies the filename of the text to be formatted.
+You will be reading contents of <tt>commands.in</tt> using stdin i.e.
+the code will be ran using the command:
+<tt>prog1 < commands.in</tt>
+
+<li>
+In the sample command file, you'll see the first line as <tt>test.in</tt>.
+This specifies the filename that contains the text to be formatted.
+Your program should use <tt>fopen</tt> to open this specified filename.
+Words are sequentially read using <tt>fscanf</tt> from the opened file.
+Once all words are processed, <tt>fclose</tt> ensures the file is properly closed.
+
+<li>
+Input text file consists of at least one line of words.
+A word is a sequence of alphanumeric characters, including punctuations and other special symbols, and white space (i.e., space character, newline character, and tabs) are word delimiters.
+
+<li>
+You can assume that inputs from the text file are well formed, however invalid commands may be given.
+For example, the user might inadvertently have a typo when entering a command.
+Your application need to handle that gracefully e.g. with an error message
+and to prompt user for a valid command.
+
+<li>
+Subsequent lines in the sample command file are commands to format the contents of <tt>test.in</tt> in various ways.
+<br>
+<b>format F #</b> will write out the text using line widths of <b>#</b>
+and justification of <b>F</b>.
+
+<li>
+You don't need to split or hyphenate words.
+You can assume that there are no words that are longer than <b>#</b> characters.
+
+<li>
+You are required to implement <b>F = L</b> and <b>F = R</b> for left
+and right justified text respectively.
+You can also implement <b>F = C</b> to center the text on each line
+for bonus points (5 points).
+<br>
+For the centering text command, when there's an odd number of whitespaces in a line, the extra whitespace should be placed on the right side.
+
+<li>
+Words in the output are separated by a single space.
+
+<li>
+Other commands that you need to handle are
+<b>quit</b> or <b>exit</b> which will terminate the program.
+
+<li>
+<strong>Expected Output:</strong>
+Given the input file <a href=test.in>test.in</a>,
+executing the commands in <a href=commands.in>commands.in</a> should generate files named:
+<a href="test.L70">test.L70</a>, <a href="test.R50">test.R50</a>, and <a href="test.C45">test.C45</a>.
+Note that the output filenames are derived from the input filename.
+
+<li>
+<strong>Another Test:</strong>
+Given the input file <a href=test.in>test.in</a>,
+executing the commands in <a href=commands2.in>commands2.in</a> using this command:
+<tt>prog1 < commands2.in > commands2.out</tt>. <br>
+This command should generate a file named:
+<a href="test.L30">test.L30</a>.
+Also, you should see a file named:
+<a href=commands2.out>commands2.out</a> that saved the outputs.
+<ul>
+<li>
+<strong>Note</strong>: In your program, use fprintf to write outputs specifically to the file <tt>test.L30</tt>.
+For messages or logs that you want to appear in <tt>commands2.out</tt>, use printf. 
+<br>It's crucial to differentiate between these two functions to ensure outputs are written to the correct files.
+</ul>
+<li>
+Files for this program:
+The following files are provided to you, and should all be submitted
+with your work.</li>
+<ul>
+<li>
+<a href=./Makefile>Makefile</a>: You don't touch this file. Running make should
+ produce an executable called prog1</li>
+<li>
+<a href=./List.h>List.h</a>: You don't touch this file. Same as Hwk1.  </li>
+<li>
+<a href=./List.c>List.c</a>: This is from your Hwk1. If you have not completed it
+earlier, you'll need to complete it now.  It will also be needed in subsequent
+assignments.</li>
+<li>
+<a href=./formatter.c>formatter.c</a>: This is where you write the application
+code.
+</li>
+
+</ul>
+
+</ul>
+
+<! ======================================>
+
+<h3>
+Grading:
+</h3>
+
+<ul>
+<li>
+
+<P>
+<b>Rubric:</b>
+
+<pre>
+You start off with 100 points.
+You lose credit for missing functionality, incorrect results,
+poorly documented or formatted code, or not following instructions.
+Particularly:
+
+- test cases: 50 points, we have 5 test cases each has 10 points
+- use of List ADT functions: 30 points.
+- style and commenting 20 points
+- Bonus points: Get 5 points by implementing F = C to center the text on each line
+
+Below is a partial list:
+
+- up to 10 points off for inadequate comments or hard-to-read code
+- up to 10 points off for not following instructions
+- up to 10 points off for special handling to grade your homework (usually
+  because you did not check that it runs on the unix timeshare server first).
+- functionality points depending on importance
+
+Make sure you:
+a.  include a Makefile, .c files, and .h file
+b.  generate an executable file called <b>prog1</b> with your makefile
+c.  have confirmed that it compiles and runs properly on unix.ucsc.edu
+d.  followed the general instructions described in <a href=https://users.soe.ucsc.edu/~pang/101/f23/overview.html>overview.html</a>
+<! ================================================================== >
+<h4>Who graded your assignment based on your last name :</h4>
+<pre>
+Mathew:   a* - j*
+Brandon:  k* - m*
+Shaunveer:   n* - z*
+</pre>
+</li>
+</ul>
+
+<! ================================================================== >
+
+<h3>
+Submission:
+</h3>
+
+<p>
+Make sure that you've compiled and tested your code on the campus
+unix timeshare before submitting.
+
+<p>
+Put your makefile and source files in a folder named <b>prog1</b>.
+
+<li>
+In the same directory where you have the <b>prog1</b> folder,
+the following command will recursively archive the contents
+of your prog1 folder into a file named prog1.zip
+<br>
+<tt>zip -r prog1.zip prog1</tt>
+
+<li>
+Submit prog1.zip on Canvas under Program 1.
+
+<p>
+You can submit as often as you want up until the deadline.
+We will only look at your most recent submission.
+
+<p>
+Read the 
+<a href="https://users.soe.ucsc.edu/~pang/101/f23/overview.html">
+for instructions on how to submit your work.
+
+<! ================================================================== >
+
+
+<HR>
+
+<H4>
+<p>
+Last modified
+<I>Tuesday, 17-Oct-2023 23:36:00 PDT.</I>
+<IMG ALIGN=BOTTOM SRC="http://users.soe.ucsc.edu/~pang/slug-icon.gif">
+</H4>
+
+</BODY>

@@ -1,0 +1,6 @@
+test.in
+formatter left 30
+hello
+format L 30
+bye
+exit

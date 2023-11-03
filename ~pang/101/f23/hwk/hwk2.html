@@ -1,0 +1,292 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>CSE 101 -- Hwk 2</title>
+</head>
+<body>
+
+<div style="text-align:center;">
+    <h2><strong>CSE 101 -- Hwk 2</strong></h2>
+    <h3>Due before midnight, Sunday, October 29, 2023.<br>
+    Late submissions will not be accepted/graded.</h3>
+    <img src="http://users.soe.ucsc.edu/~pang/images/line.jpg" width="700" height="10">
+</div>
+
+<h3>Changelog:</h3>
+<ul>
+    <li><strong> Oct 23, 2023:</strong> Updated destructQueue header by passing it a double Queue pointer for proper deallocation, instead of a single pointer.</li>
+    <li><strong> Oct 23, 2023:</strong> Modified Queue.c, Queue.h. Added a test case as well and an FAQs section.</li>
+    <li><strong> Oct 19, 2023:</strong> Modified Queue.c, Queue.h.</li>
+    <li><strong>Oct 18, 2023:</strong> Created initial version.</li>
+</ul>
+
+<h3>Objectives:</h3>
+<!-- <strong>(We are still working on this file, it should be ready soon!)</strong> -->
+<p>Implement queue ADT and a dining hall simulation.</p>
+
+<h3>Description:</h3>
+<p>In this assignment, you will implement a dining hall simulation utilizing the concepts of queues and linked lists. As before, input will be from stdin and output will be to stdout.</p>
+
+<h3>Details:</h3>
+<ul>
+    <li>
+        <strong>Queue ADT:</strong>
+        <p>In a service/logistics setting, one strategy is to process items as they arrive, also known as
+            first in, first out (or FIFO).
+            In this setting, we are not discriminating between items. For instance, in a package delivery setup,
+            we process packages by the order of their arrival only.
+            That is, the first package to arrive will be the first package to be processed. Same in a
+            vaccination framework: the first person that shows up gets the shot.
+
+            Your program will use an <b>array</b> for implementation of the queue ADT.
+            You are provided with <a href="Queue.h">Queue.h</a>.
+            The first requirement of this homework is to write <a href="Queue.c">Queue.c</a> that implements the functions in Queue.h.
+        </p>
+    </li>
+    <li>
+        <strong>Application:</strong>
+        <p>The second requirement of this homework is to implement the dining hall simulation as described:</p>
+        <div>
+            <h4>Introduction:</h4>
+            <p>In a bustling dining hall, several counters or stations serve different types of food. Each station offers a unique dish for the day, such as a specific dessert, drink, salad, entree, etc. The food is served in a "first-come, first-served" manner, and patrons line up at these stations to get their serving. Through this simulation, you'll implement the core concepts of queues and linked lists to manage the flow of patrons and the food served.
+            <br><br>
+            The dining hall application has two phases to it. The <strong>System Initialization</strong> phase and the <strong>Commands</strong> phase. In the initialization phase, input via stdin will be used to initialize the entire system (see below). In the <strong>Commands</strong> phase, your program will run infinitely, taking commands as input from the user, till the user explicitly specifies the program to exit (see below). 
+            </p>
+            
+            <h3>System Initialization:</h3>
+            The following data will be provided:<br><br>
+            <ul>
+                <li>Number of counters or stations (e.g., 5).</li>
+                <li>Name of the dish and the quantity available for each station (e.g., Dessert 10).</li>
+            </ul>
+            <br>This will be provided via a <a href = "test1.in">setup file</a> which will be given to your program via stdin. The name and contents of this file can vary, but the format will be the same. This file will be read via stdin the same way input files were previously being read by your programs in the previous assignments. 
+
+            <p><strong>Setting up the Stations:</strong></p>
+            <p>Construct a linked list named <tt>stations_list</tt> that represents each station in the dining hall. <br>Each node in this list will contain:</p>
+            <ul>
+                <li>Name of the dish (e.g., Dessert).</li>
+                <li>Quantity of servings available.</li>
+                <li>A pointer to a queue of patrons waiting at that station.</li>
+            </ul>
+            <br>
+            The names and quanities of each item will be read from stdin via a <a href = "test1.in">setup file</a> file,
+which will have the same format but can have a different name and contents. The first entry in this file will always be the
+number of stations (lets say <i>x</i>) followed by <i>x</i> lines, each line having the name of the station followed by the
+number of items available at that station. Following this, will be a <a href = "people.in">filename containing patrons</a> (<tt>people.in</tt> in this case) that will contain the names of people and the queues that they would like to join. This file would be read via file operations, like <tt>fopen</tt>.
+
+            <h4>Managing Patrons:</h4>
+            <p>Create a list called <tt>people_list</tt> which will keep track of patrons who have just entered the dining hall and have not joined any queue yet or those who have been served and are no longer waiting in any queue. 
+                <ul>
+                    <li>Initially, <tt>people_list</tt> will be empty</li>
+                    <li>At the initialization stage, input will be provided through a patron file named <a href="people.in">people.in</a>. This file contains the name of each patron and their desired station. </li>
+                    <li><strong>For instance</strong>: <tt>Alex Dessert</tt> signifies that "Alex" wishes to join the queue for the Dessert station. </li>
+                    <li>At the end of the initialization phase,  <tt>people_list</tt> will still be empty, because all the people in <a href="people.in">people.in</a> would be assigned to a queue.</li>
+                </ul>
+                <br>
+                Keep in mind that while the filename, <a href="people.in">people.in</a>, and its contents can vary, the format of the file will be the same, i.e the number of people on the first line of the file (lets say <i>y</i>), followed by <i>y</i> lines, each line containing the name of the person followed by the queue they would like to join.
+                <br>
+            </p>
+            <strong>By this point</strong>:
+            <br>
+            <ul>
+                <li>
+                    Each of the stations should have been initialized with the right name and number of items.
+                </li>
+                <li>Each of the station queues should have been initialized with people from the <a href = "people.in">people.in</a> file.</li>
+                <li>The <tt>people_list</tt> should be empty</li>
+            </ul>
+            <!-- <strong>Based on this input</strong>:
+            <br>
+            <br>
+            <ul>
+                <li>If servings at the chosen station > 0 and the number of people waiting in the queue at that station < the servings available at that station:</li>
+                    <ul>
+                        <li>Add the patron at the end of the queue for that station.</li>
+                        <li>As patrons are being served from the queue, remove them from the queue and add them to <tt>people_list</tt>.</li>
+                        <li>Patrons will be served manually using the "serveQueue" function (see below), <strong>NOT automatically.</strong> So until the serveQueue function is called for a station, the patrons in the queue of that station will not be served.</li>
+                    </ul>
+                <li>If the servings are exhausted or servings <= the number of people in the queue: </li>
+                    <ul>
+                        <li>The patron will wait in line by joining the queue of that particular station.</li>
+                    </ul>
+            </ul> -->
+
+            <h3>Commands:</h3>
+                <p>This is the second part of the program. Post initialization, you will enter a while loop which will keep prompting the user for input till the user exits. This input will be from stdin, as can be seen in the <a href="test1.in">setup file</a>. Following the name of the people's file (<tt>people.in</tt>) in this case, stdin will have a two line input per command. The first line will be an option (Only valid if the option is from 1-7). If the option is a valid option, the second line will be the input for that valid option. After reading the people's file, you will keep on reading from stdin till the user enters a valid integer (1-7). If the user has entered a valid integer, read the next line from stdin and verify the validity of the command. If its a valid command, execute it, otherwise, keep reading from stdin again till the user enters a valid integer followed by a valid command. </p>
+                <strong>Choose an option (1-7):</strong><br>
+                <br>
+                <ul>
+                    <li>
+                        <strong>Join a Station:</strong>
+                        <ul>
+                            <li>Option Key: <code>1</code></li>
+                            <li>If 1 is pressed, enter this option, and enter a command of the following format:</li>
+                            <li>Command Format: <code>Alex Dessert</code></li>
+                            <li>Description: "Alex" wishes to join the Dessert station queue. Add Alex to the end of the queue.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Restock a Station:</strong>
+                        <ul>
+                            <li>Option Key: <code>2</code></li>
+                            <li>Command Format: <code>Dessert 20</code></li>
+                            <li>Description: Adds 20 more servings to the Dessert station.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Leave a Station:</strong>
+                        <ul>
+                            <li>Option Key: <code>3</code></li>
+                            <li>Command Format: <code>Dessert Alex</code></li>
+                            <li>Patron "Alex" leaves the queue for the Dessert station. If they're at the front of the queue, they simply leave. If they're not at the front, or if they don't belong to that queue, print an error message.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Depart from the Dining Hall:</strong>
+                        <ul>
+                            <li>Option Key: <code>4</code></li>
+                            <li>Command Format: <code>Alex</code></li>
+                            <li>Patron "Alex" departs from the dining hall. If they are in the people_list, remove them. If they aren't they may be in one of the queues. Search the LinkedList of queues one by one, to see if they are at the front of the queue. If they are, call your leaveStation function for that queue on Alex, and then remove them from the people_list. If they aren’t at the front of any of the queues, print an error message.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Serve Queue:</strong>
+                        <ul>
+                            <li>Option Key: <code>5</code></li>
+                            <li>Command Format: <code>Dessert</code></li>
+                            <li>Description: Serve dessert to as many people in the queue as possible, till you either run out of dessert or all the people have been served. For every person served, append them to the people_list. For every person served, decrease the count of the available dishes by 1. If a station does not have any dish while this option is called, and there are still people waiting in its queue, print the message "Apologies for the inconvenience. Please wait for the queue to be filled".</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Write State:</strong>
+                        <ul>
+                            <li>Option Key: <code>6</code></li>
+                            <li>Command Format: <code>filename</code></li>
+                            <li>Description: Write the names of all the people in all the queues, starting from queue 0 till queue n-1 in the file named filename. Write a blank line after writing the contents of each queue. After writing the names in all the queues, write the contents of people_list to filename, starting from the head of the list.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>End Simulation:</strong>
+                        <ul>
+                            <li>Description: An Exit command will conclude the program.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+
+
+            <h4>Assumptions:</h4>
+            <ul>
+                <li>A patron is restricted to one queue at any time.</li>
+                <li>Each station provides only a single type of dish.</li>
+                <li>A patron is served only one serving per station.</li>
+                <li>Patrons are represented using strings like "Alex".</li>
+                <li>Each patron will have a unique name</li>
+                <li>None of the names (people and items) will be longer than 50 characters</li>
+		        <!-- <li>The maximum queue length for any station is restricted to 100 patrons.</li> -->
+            </ul>
+        </div>
+    </li>
+    <li>
+        <h4>Files for this program:</h4>
+        <ul>
+            <li><a href="Makefile">Makefile</a>: Makefile for compiling your code. Do not change this file.</li>
+            <li><a href="Queue.h">Queue.h</a>: Do not change this file. Implement the functions for the Queue ADT.</li>
+            <li><a href="Queue.c">Queue.c</a>: Define the Queue struct and implement the Queue ADT.</li>
+            <li><a href="List.h">List.h</a>: Do not change this file.  From Hwk 1.</li>
+            <li>List.c: Define List functions from your Hwk 1.</li>
+            <li><a href="simulator.c">simulator.c</a>: This is where you put your application.</li>
+        </ul>
+        <br>
+        Additionally, you are supposed to use your <tt>List.h</tt> and <tt>List.c</tt> files from Hwk1 to create LinkedLists. 
+    </li>
+<li>
+<h4>Sample input is provided in:</h4>
+<ul>
+<li><a href="test1.in">test1.in</a> --> <a href="output1.txt">output1.txt</a></li>
+<li><a href="people.in">people.in</a>
+</ul>
+<br>In this case, following the system initialization, there is only 1 command being executed (write state), as can be seen in the <a href="test1.in">setup file</a>. Since this was the first (and only) command executed followed by a 7(exit option), the program writes the 5 queues, as can be seen in <a href="output1.txt">output1.txt</a>, and then exits. The <tt>people_list</tt> is empty so it does not write anything from that list at this point. This test file is used to test your system initialization. 
+<br><br>
+As already mentioned, the commands file will be read via stdin, and the <tt>people.in</tt> file will be read using a file read operation, like <tt>fopen</tt>. The output file will be written from the terminal in the second phase, whenever the user feels like writing it. The user will press and enter the option 6, provide a filename (output1.txt in this case), and the program should write a file of the same format as <a href="output1.txt">output1.txt</a>
+<br><br>
+<ul>
+    <li><a href="test2.in">test2.in</a> --> <a href="output2.txt">output2.txt</a></li>
+    <li><a href="people.in">people.in</a>
+</ul> 
+<!-- <br><br>
+As you can see, <a href="output1.txt">output1.txt</a> contains 5 blocks of names (for each of the 5 queues in the example test provided). This file was written immediately after the initialization phase as soon as the commands phase started (The first command was 6 followed by output1.txt, which gave this file). Since the <tt>people_list</tt> was empty at this point, it was not written. If this file was written later on during the <strong>commands</strong> phase, the output might have been different.  -->
+</li>
+
+</ul>
+
+<h3>FAQs:</h3>
+<ol>
+    <li>
+        <strong>Will we have to do input validation when prompting the user to enter an option from 1-7?</strong>
+        <br>
+        Yes. You must make sure that the user enters only valid intergers (from 1-7). If they enter any invalid input (integer, text etc), the program should print a message that their input is invalid and ask them to enter the input again. <br><br>
+    </li>
+    <li>
+        <strong>Once, a user has entered a valid option (1-7), can we expect them to enter more or lesser number of command words for that command?</strong>
+        <br>
+        No, at this point, you should expect the user to enter the exact number of command words as that command expects. For example, if the user enters option 1 (join a queue), they will enter exactly two command words after this e.g <tt>Alex Icecream</tt>, and not 3 or 1 words.
+        <br><br>
+    </li>
+    <li>
+        <strong>Ok but even if the user enters the right number of command words, can any of those command words be incorrect?</strong>
+        <br>
+        Yes, for example, after selecting option 1, a user might enter <tt>Alex Beef</tt>, but <tt>Beef</tt> might not be a valid station. In that case, your program should tell the user that <tt>Beef</tt> is not a valid station, and ask the user to enter the input again (from 1-7). 
+        <br><br>
+    </li>
+    <li>
+        <strong>What is the maxSize of a queue gonna be? Is it different from the total number of items in the queue?</strong>
+        <br>
+        No, the maxSize of the queue is equal to the number of items in the queue. So size in the queue struct is both, the number of items in the queue and the maxSize of the queue. 
+        <br><br>
+    </li>
+    <li>
+        <strong>How do we enqueue in a queue when it becomes full then if size represents the current size as well as the maxSize of the queue? How do we dequeue?</strong>
+        <br>
+        As explained in one of the discussion sections, for enqueueing, you copy items from the array to a temporary array, deallocate the array, allocate a new array of size+1, copy items back from the temp array, and add the new element at the end of the array. A similar logic would apply for dequeueing.  
+        <br><br>
+    </li>
+</ol>
+
+<h3>Rubrics (Needs modification after solution is available):</h3>
+<pre>
+Breakdown:
+
+- 30 points for the Queue.
+- 50 points for 5 test cases of the dining hall
+- 10 points for following all the instructions correctly
+- 10 points for comments and well documented code
+</pre>
+
+<h4>Who graded your assignment based on your last name:</h4>
+<pre>
++++:   a* - j*
++++:  k* - m*
++++:   n* - z*
+</pre>
+
+<h3>Submission:</h3>
+<ul>
+    <!-- <li>Aside from comparing your output with those in <a href="hwk2.out">hwk2.out</a>, be sure to do <strong>unit testing</strong> of your code.</li> -->
+    <li>Make sure that you've compiled and tested your code on the campus unix timeshare before submitting. On the unix timeshare, put materials in a folder named <strong>hwk2</strong>.</li>
+    <li>In the same directory where you have the <strong>hwk2</strong> folder, the following command will recursively archive the contents of your hwk2 folder into a file named hwk2.zip
+    <br>
+    <tt>zip -r hwk2.zip hwk2</tt></li>
+    <li>Submit hwk2.zip on Canvas under Homework 2. You can submit as often as you want up until the deadline. We will only look at your most recent submission.</li>
+</ul>
+
+<hr>
+
+<h4>
+    Last modified: <i>10/23/2023</i><br>
+    <img align="BOTTOM" src="http://users.soe.ucsc.edu/~pang/slug-icon.gif">
+</h4>
+
+</body>
+</html>

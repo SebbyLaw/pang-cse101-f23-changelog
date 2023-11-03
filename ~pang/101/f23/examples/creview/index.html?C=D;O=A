@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+ <head>
+  <title>Index of /~pang/101/f23/examples/creview</title>
+ </head>
+ <body>
+<h1>Index of /~pang/101/f23/examples/creview</h1>
+<pre><img src="/icons/blank.gif" alt="Icon "> <a href="?C=N;O=A">Name</a>                    <a href="?C=M;O=A">Last modified</a>      <a href="?C=S;O=A">Size</a>  <a href="?C=D;O=D">Description</a><hr><img src="/icons/unknown.gif" alt="[   ]"> <a href="1d">1d</a>                      2023-09-28 09:21  8.2K  
+<img src="/icons/text.gif" alt="[TXT]"> <a href="1d.c">1d.c</a>                    2023-09-28 09:22  311   
+<img src="/icons/unknown.gif" alt="[   ]"> <a href="1dparam">1dparam</a>                 2021-04-02 09:06  8.3K  
+<img src="/icons/text.gif" alt="[TXT]"> <a href="1dparam.c">1dparam.c</a>               2021-04-02 09:06  507   
+<img src="/icons/unknown.gif" alt="[   ]"> <a href="2d">2d</a>                      2023-09-28 09:28  8.3K  
+<img src="/icons/text.gif" alt="[TXT]"> <a href="2d.c">2d.c</a>                    2023-09-28 09:28  612   
+<img src="/icons/text.gif" alt="[TXT]"> <a href="2dparam.c">2dparam.c</a>               2021-03-30 22:09  1.0K  
+<img src="/icons/text.gif" alt="[TXT]"> <a href="a.c">a.c</a>                     2021-03-30 19:17  120   
+<img src="/icons/unknown.gif" alt="[   ]"> <a href="a.o">a.o</a>                     2021-09-27 09:03  1.7K  
+<img src="/icons/unknown.gif" alt="[   ]"> <a href="a.out">a.out</a>                   2023-10-10 20:16  8.2K  
+<img src="/icons/unknown.gif" alt="[   ]"> <a href="array">array</a>                   2021-10-05 14:46  8.3K  
+<img src="/icons/text.gif" alt="[TXT]"> <a href="array.c">array.c</a>                 2021-10-05 14:46  608   
+<img src="/icons/unknown.gif" alt="[   ]"> <a href="array3">array3</a>                  2021-10-05 14:30  8.5K  
+<img src="/icons/text.gif" alt="[TXT]"> <a href="array3.c">array3.c</a>                2021-03-30 21:59  1.4K  
+<img src="/icons/unknown.gif" alt="[   ]"> <a href="atest">atest</a>                   2021-09-27 09:08  8.2K  
+<img src="/icons/text.gif" alt="[TXT]"> <a href="b.c">b.c</a>                     2021-09-27 09:08  101   
+<img src="/icons/unknown.gif" alt="[   ]"> <a href="b.o">b.o</a>                     2021-09-27 09:08  1.6K  
+<img src="/icons/text.gif" alt="[TXT]"> <a href="c.c">c.c</a>                     2021-10-27 11:59  166   
+<img src="/icons/unknown.gif" alt="[   ]"> <a href="func">func</a>                    2021-10-05 21:54  8.2K  
+<img src="/icons/text.gif" alt="[TXT]"> <a href="func.c">func.c</a>                  2023-10-11 20:48  650   
+<img src="/icons/text.gif" alt="[TXT]"> <a href="inc.h">inc.h</a>                   2021-03-16 10:21   71   
+<img src="/icons/unknown.gif" alt="[   ]"> <a href="input">input</a>                   2021-03-31 09:19   21   
+<img src="/icons/unknown.gif" alt="[   ]"> <a href="make.o">make.o</a>                  2021-03-31 08:59  1.7K  
+<img src="/icons/folder.gif" alt="[DIR]"> <a href="make/">make/</a>                   2023-10-11 10:05    -   
+<img src="/icons/text.gif" alt="[TXT]"> <a href="makefile">makefile</a>                2023-10-04 20:17  424   
+<img src="/icons/unknown.gif" alt="[   ]"> <a href="output">output</a>                  2021-03-31 09:20    5   
+<img src="/icons/text.gif" alt="[TXT]"> <a href="ptr.c">ptr.c</a>                   2021-10-04 08:36  151   
+<img src="/icons/unknown.gif" alt="[   ]"> <a href="read">read</a>                    2023-09-28 09:03  8.2K  
+<img src="/icons/unknown.gif" alt="[   ]"> <a href="scanf">scanf</a>                   2023-09-27 21:42  8.2K  
+<img src="/icons/text.gif" alt="[TXT]"> <a href="scanf.c">scanf.c</a>                 2023-09-28 09:03  150   
+<img src="/icons/unknown.gif" alt="[   ]"> <a href="scanf2">scanf2</a>                  2023-09-27 21:47  8.3K  
+<img src="/icons/text.gif" alt="[TXT]"> <a href="scanf2.c">scanf2.c</a>                2023-09-27 21:47  197   
+<img src="/icons/text.gif" alt="[TXT]"> <a href="shift.c">shift.c</a>                 2021-10-18 07:50  289   
+<img src="/icons/text.gif" alt="[TXT]"> <a href="square.c">square.c</a>                2021-09-25 09:37  1.7K  
+<img src="/icons/text.gif" alt="[TXT]"> <a href="ssss.c">ssss.c</a>                  2023-10-10 20:16  358   
+<img src="/icons/unknown.gif" alt="[   ]"> <a href="struct">struct</a>                  2023-10-05 08:56  8.2K  
+<img src="/icons/text.gif" alt="[TXT]"> <a href="struct.c">struct.c</a>                2023-10-05 08:56  311   
+<img src="/icons/text.gif" alt="[TXT]"> <a href="type.c">type.c</a>                  2021-09-23 20:51  162   
+<img src="/icons/text.gif" alt="[TXT]"> <a href="x1">x1</a>                      2021-04-09 13:49    0   
+<img src="/icons/text.gif" alt="[TXT]"> <a href="x2">x2</a>                      2021-04-09 13:49    0   
+<img src="/icons/unknown.gif" alt="[   ]"> <a href="xx">xx</a>                      2021-04-09 13:50    5   
+<img src="/icons/unknown.gif" alt="[   ]"> <a href="xxxx">xxxx</a>                    2021-04-02 08:49  8.2K  
+<hr></pre>
+<address>Apache/2.4.6 (CentOS) Server at users.soe.ucsc.edu Port 443</address>
+</body></html>

@@ -1,0 +1,288 @@
+<HTML>
+<HEAD>
+<TITLE>CSE 101 -- Fall 2023</TITLE>
+</HEAD>
+
+<! BODY background="slug.gif">
+
+<CENTER>
+<P>
+<H2><B>CSE 101 -- Prog 0</B></H2>
+
+<H3>
+Due before midnight, Sunday, October 08, 2023.
+<br>
+Late submissions will not be accepted/graded. 
+</H3>
+
+
+<IMG SRC="http://users.soe.ucsc.edu/~pang/images/line.jpg", width=700, height=10>
+</CENTER>
+
+<! ================================================================== >
+
+<H3>
+Change Log:
+</H3>
+
+<ul>
+<li>
+</ul>
+
+<! ================================================================== >
+
+<H3>
+Objectives:
+</H3>
+
+Brush up on C and 
+<a href=
+https://tenor.com/view/recursion-winnie-pooh-gif-8467721>recursion</a>.
+You will also need to brush up a bit on geometry (lines and slopes)
+and learn a bit of computer graphics along the way.
+
+<! ================================================================== >
+
+<H3>
+Description:
+</H3>
+
+In this programming assignment, you will be generating graphics patterns procedurally.
+Specifically, you will be writing code to draw recursively defined shapes
+known as
+<a href=https://en.wikipedia.org/wiki/L%C3%A9vy_C_curve>
+Levy C fractal curve.</a>
+<br>
+
+<H3>
+Details:
+</H3>
+<ul>
+
+<! --------------------------------->
+
+<li>
+You will read from stdin, which you can redirect from a file.
+Input will consist of:
+<ul>
+<li> output filename - string with no spae,
+<li> dimension of image - 2 integers,
+representing width (number of columns) and height (number of rows)
+respectively.
+Coordinates of points on the image are 0..W-1, 0..H-1.
+The origin is at the top left corner.
+<li> recursive depth - an integer,
+<li> starting point - 2 doubles (x and y coordinates),
+<li> ending point - 2 doubles (x and y coordinates).
+</ul>
+
+<li>
+In the following examples, input/output pairs are:
+<ul>
+<li> out1 512 512 10 250 370 370.0 250.0
+	<br>
+	will produce the following image in a file called <t>out1.png</t>
+	<br>
+	<IMG SRC="out1.png" width = 150> <br> </a>
+<li> out2 512 512 5 150.0 360.0 360.0 360.0
+	<br>
+	will produce the following image in a file called <t>out2.png</t>
+	<br>
+	<IMG SRC="out2.png" width = 150> <br> </a>
+<li> Note that the order of points matter.  Compare this with the first
+example:
+	<br>
+	out3 512 512 10 370 250 250 370
+	<br>
+	will produce the following image in a file called <t>out3.png</t>
+	<br>
+	<IMG SRC="out3.png" width = 150> <br> </a>
+<li> If parts of the C curve falls outside the drawing area,
+those parts are drawn but are not visible.  You don't need to do anything
+special in your code sine Cairo will handle it for you.
+	<br>
+	out4 256 256 8 128 128 250 128
+	will produce the following image in a file called <t>out4.png</t>
+	<br>
+	<IMG SRC="out4.png" width = 150> <br> </a>
+
+<li>
+<b>Requirements:</b>
+<ul>
+	<li> In addition to handling the input specifications mentioned above, your output
+		should consist of a solid background color, and a solid foreground color (for drawing your boxes).
+		The examples above use a white background and a red foreground color.
+		You can change these two colors, but please pick a pair that are easy to see.
+	<li> Each run of your code should produce a png file.
+</ul>
+
+<p>
+<li>
+<b>Graphics Library:</b>
+There's only a limited number of free simple 2D graphics library with C binding.
+For this programming assignment, we will use the
+<a href=https://www.cairographics.org/>
+Cairo Graphics Library</a>.
+It's easy to learn the basics needed for this assignment
+and it also supports multiple output "targets".
+For this assignment, your program will output images in png format.
+It also runs on multiple platform: Unix, Windows, Mac.
+<p>
+The Cairo Graphics Library is already installed on our campus unix webserver: <tt>unix.ucsc.edu</tt>.
+Please make sure that your code compiles, runs, and produces the correct output on this
+server before submitting your code.
+</ul>
+
+<p>
+<b>Tutorial/Startup code:</b>
+<ul>
+<li> <a href=https://www.cairographics.org/tutorial/>Cairo Tutorial</a> is a nice concise tutorial.
+<br>
+The coordinate system in Cairo graphics
+has x increasing going to the right,
+and y increasing going down!
+When we do arithmetic, we usually think of y increasing going up.
+You can convert Cairo y-coordinates to the standard y-coordinates
+by simply multiplying them by minus 1.
+After doing your arithmetic, be sure to convert back to Cairo y-coordinates
+before sending the draw commands.
+
+<li> <a href=Makefile>Makefile</a>
+<br>
+Note that the source and executable files are named
+<tt>ccurve.c</tt> and
+<tt>ccurve</tt> respectively.
+<li> <a href=square.c>Startup code</a> which produces the following output:
+	<IMG SRC="square.png" width = 150> <br> </a>
+
+</ul>
+
+<p>
+<li>
+<b>Input/Output:</b>
+<ul>
+<li>
+You will be reading input to your program from stdin.
+To run your code, we will be doing something like:
+<br>
+<tt>ccurve < input1.txt</tt>.
+<li>
+The input files will contain the input specs mentioned above prepended by an output filename.
+Each input file will contain info for a single run.
+For example, <tt>input1.txt</tt> might contain:
+<br>
+<tt>output1  &nbsp&nbsp&nbsp&nbsp       512 512 10 250 370 370.0 250.0</tt>.
+<br>
+It should then generate <tt>output1.png</tt> which contains the output image of your run.
+Use blank space character as delimiter for the filename.
+</ul>
+
+</ul>
+
+<! ======================================>
+
+</ul>
+
+<! ======================================>
+
+<h3>
+Grading:
+</h3>
+
+<ul>
+<li>
+
+<P>
+<b>Rubric:</b>
+
+<pre>
+We followed the following grading rubric:
+*  15 points for proper comments and well written code
+*  20 points for using recursion properly and correctly
+*  5 points for following all the instructions
+*  60 points for 6 test cases, 10 points per test case.
+</pre>
+<!-- You start off with 100 points.
+You lose credit for missing functionality, incorrect results,
+poorly documented or formatted code, or not following instructions.
+
+Below is a partial list:
+
+- up to 10 points off for inadequate comments or hard-to-read code
+- up to 10 points off for special handling to grade your homework
+  (usually because you did not check that it runs on the computers in the lab first)
+- up to 10 points off for not following instructions
+- functionality points depending on importance
+	*  20 points off if not using recursion
+	*  10 points off if failed a test (we have 6 test input) -->
+
+
+
+<!-- Make sure you:
+a.  include a makefile, .c file, and optionally .h file
+b.  generate an executable file called <b>ccurve</b> with your makefile
+c.  have confirmed that it compiles and runs properly on unix.ucsc.edu
+d.  followed the general instructions described in <a href=https://users.soe.ucsc.edu/~pang/101/f23/overview.html>overview.html</a> -->
+
+
+
+<! ================================================================== >
+
+<li>
+<h3>Who graded your assignment based on last name:</h3>
+(i.e. who to contact if you have questions about how your program was graded)
+
+
+<pre>
+Andrew Song:		a*  - ji*
+Gaurav Sahasrabudhe:	jo* - pa*
+Mona Zhao:		Pe* - Z*
+</pre>
+
+</ul>
+
+<! ================================================================== >
+
+<h3>
+Submission:
+</h3>
+
+<p>
+Make sure that you've compiled and tested your code on the campus
+unix timeshare before submitting.
+
+<p>
+Put your makefile and source files in a folder named <b>prog0</b>.
+
+<li>
+In the same directory where you have the <b>prog0</b> folder,
+the following command will recursively archive the contents
+of your prog0 folder into a file named prog0.zip
+<br>
+<tt>zip -r prog0.zip prog0</tt>
+
+<li>
+Submit prog0.zip on Canvas under Program 0.
+
+<p>
+You can submit as often as you want up until the deadline.
+We will only look at your most recent submission.
+
+<p>
+Read the 
+<a href="https://users.soe.ucsc.edu/~pang/101/f23/overview.html">
+general instructions on how to submit your work.</a>
+
+<! ================================================================== >
+
+
+<HR>
+
+<H4>
+<p>
+Last modified
+<I>Friday, 13-Oct-2023 20:35:28 PDT.</I>
+<IMG ALIGN=BOTTOM SRC="http://users.soe.ucsc.edu/~pang/slug-icon.gif">
+</H4>
+
+</BODY>

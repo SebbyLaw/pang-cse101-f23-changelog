@@ -1,0 +1,14 @@
+num list has 2 elements
+321    123    
+num list after destroying it is: -- 
+num list has 3 elements
+123    321    123    
+0th element of list is 123
+1th element of list is 321
+2th element of list is 123
+num list has 2 elements
+123    123    
+
+Reuse L for strings
+string list has 2 elements
+hello    good bye    

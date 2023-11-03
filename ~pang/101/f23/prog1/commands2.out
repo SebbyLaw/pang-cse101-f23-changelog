@@ -1,0 +1,5 @@
+Invalid command 'formatter'. Please use the 'format <Justification> <Width>' format, such as 'format L 50', or exit using 'quit'/'exit'.
+Invalid command 'left'. Please use the 'format <Justification> <Width>' format, such as 'format L 50', or exit using 'quit'/'exit'.
+Invalid command '30'. Please use the 'format <Justification> <Width>' format, such as 'format L 50', or exit using 'quit'/'exit'.
+Invalid command 'hello'. Please use the 'format <Justification> <Width>' format, such as 'format L 50', or exit using 'quit'/'exit'.
+Invalid command 'bye'. Please use the 'format <Justification> <Width>' format, such as 'format L 50', or exit using 'quit'/'exit'.
