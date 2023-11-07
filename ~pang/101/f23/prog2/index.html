@@ -215,6 +215,11 @@ the <a href=PriorityQueue.c>PriorityQueue.c</a> file.
 
 <h3>FAQs:</h3>
 <ol>
+    <li><b>Will the heap be of a fixed capacity always? Lets say the size of the heap becomes equal to its capacity, does the heap then stop accepting more elements to be inserted?</b></li>
+    Yes, the heap will have a fixed capacity, but it is a dynamic heap, not a static heap. What this means is that once the size of the heap becomes equal to its capacity, the heap will double its capacity to allow for more elements to be inserted. <br><br>
+
+    <li><b>Since its a dynamic heap, when we are deleting elements from the heap (via extractMax), once the size becomes smaller than half the capacity, do we dynamically make the capacity of the heap half its original capacity to save space, or is that not needed?</b></li>
+    You could do that, but that is not necessary. In practical applications where you are certain that a lot of deletes (extractMax) are supposed to take place continuously, halving the capacity of a heap can be a good decision wrt space, but its <i>not required</i> for this assignment. <br><br>
 </ol>
 
 <! ======================================>
