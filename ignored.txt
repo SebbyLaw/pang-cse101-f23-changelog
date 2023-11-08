@@ -38,11 +38,3 @@ https://users.soe.ucsc.edu/~pang/101/f23/exercises/pren1/?C=N;O=A
 https://users.soe.ucsc.edu/~pang/101/f23/exercises/pren1/?C=N;O=D
 https://users.soe.ucsc.edu/~pang/101/f23/exercises/pren1/?C=S;O=A
 https://users.soe.ucsc.edu/~pang/101/f23/exercises/pren1/?C=S;O=D
-https://users.soe.ucsc.edu/~pang/101/f23/prog3/?C=D;O=A
-https://users.soe.ucsc.edu/~pang/101/f23/prog3/?C=D;O=D
-https://users.soe.ucsc.edu/~pang/101/f23/prog3/?C=M;O=A
-https://users.soe.ucsc.edu/~pang/101/f23/prog3/?C=M;O=D
-https://users.soe.ucsc.edu/~pang/101/f23/prog3/?C=N;O=A
-https://users.soe.ucsc.edu/~pang/101/f23/prog3/?C=N;O=D
-https://users.soe.ucsc.edu/~pang/101/f23/prog3/?C=S;O=A
-https://users.soe.ucsc.edu/~pang/101/f23/prog3/?C=S;O=D

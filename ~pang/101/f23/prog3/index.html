@@ -1,25 +1,82 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!DOCTYPE html>
 <html>
- <head>
-  <title>Index of /~pang/101/f23/prog3</title>
- </head>
- <body>
-<h1>Index of /~pang/101/f23/prog3</h1>
-<pre><img src="/icons/blank.gif" alt="Icon "> <a href="?C=N;O=D">Name</a>                    <a href="?C=M;O=A">Last modified</a>      <a href="?C=S;O=A">Size</a>  <a href="?C=D;O=A">Description</a><hr><img src="/icons/text.gif" alt="[TXT]"> <a href="Dictionary.c">Dictionary.c</a>            2023-11-04 20:26  1.0K  
-<img src="/icons/text.gif" alt="[TXT]"> <a href="Dictionary.h">Dictionary.h</a>            2023-11-04 20:27  2.3K  
-<img src="/icons/text.gif" alt="[TXT]"> <a href="HashTable.c">HashTable.c</a>             2023-10-29 17:37  276   
-<img src="/icons/text.gif" alt="[TXT]"> <a href="HashTable.h">HashTable.h</a>             2023-10-29 16:15  445   
-<img src="/icons/text.gif" alt="[TXT]"> <a href="List.c">List.c</a>                  2023-10-12 16:43  2.2K  
-<img src="/icons/text.gif" alt="[TXT]"> <a href="List.h">List.h</a>                  2023-10-10 15:03  2.3K  
-<img src="/icons/unknown.gif" alt="[   ]"> <a href="Makefile">Makefile</a>                2023-11-04 20:25  192   
-<img src="/icons/text.gif" alt="[TXT]"> <a href="Readme.md">Readme.md</a>               2023-10-29 17:35  1.3K  
-<img src="/icons/text.gif" alt="[TXT]"> <a href="hwk3.c">hwk3.c</a>                  2023-10-29 17:39  258   
-<img src="/icons/text.gif" alt="[TXT]"> <a href="music_database.in">music_database.in</a>       2023-11-04 17:53   19K  
-<img src="/icons/unknown.gif" alt="[   ]"> <a href="test1.in">test1.in</a>                2023-11-04 18:51  131   
-<img src="/icons/text.gif" alt="[TXT]"> <a href="test1.out">test1.out</a>               2023-11-04 20:23  1.2K  
-<img src="/icons/text.gif" alt="[TXT]"> <a href="test2.in">test2.in</a>                2023-11-04 20:31  161   
-<img src="/icons/text.gif" alt="[TXT]"> <a href="test2.out">test2.out</a>               2023-11-04 20:32  634   
-<img src="/icons/unknown.gif" alt="[   ]"> <a href="test_input_db.in">test_input_db.in</a>        2023-11-04 18:51  100   
-<hr></pre>
-<address>Apache/2.4.6 (CentOS) Server at users.soe.ucsc.edu Port 443</address>
-</body></html>
+<head>
+    <title>Music Database Manager Assignment</title>
+</head>
+<body background="slug.gif">
+    <center>
+        <p>
+            <h2><b>Music Database Manager Assignment</b></h2>
+            <h3>Due before midnight, Sunday, November 19, 2023<br>Late submissions will not be accepted/graded</h3>
+        </p>
+        <img src="http://users.soe.ucsc.edu/~pang/images/line.jpg" width="700" height="10">
+    </center>
+    <h3>Objective:</h3>
+    <p>
+        To create a program that allows users to manage a music database with functionalities such as adding, removing, updating, finding, and displaying songs, using the Dictionary ADT.
+    </p>
+    <h3>Description:</h3>
+    <p>
+        You are tasked with developing a simple music database management application using your <a href="Dictionary.h">Dictionary.c</a> and the provided header file <a href="Dictionary.h">Dictionary.h</a>.
+    </p>
+    <p>
+        At the start, your application will read input from stdin. The stdin input will have a filename to read the songs and their authors, as well as different commands to execute post initialization. After reading the input and the initialization phase, your application should provide the following functionalities:
+    </p>
+    <ol>
+        <li><b>Add a Song:</b> This allows users to input a song name and its corresponding author, and add them to the dictionary, which is being used to add songs to the database.</li>
+        <li><b>Remove a Song:</b> This enables users to delete a song from the database using the song's name.</li>
+        <li><b>Update Song Details:</b> This lets users update the author of a song using the song's name.</li>
+        <li><b>Find the author of a song:</b> This allows users to find a song in the database using the song's name.</li>
+        <li><b>Display All Songs:</b> This will print out all the songs and their authors in the database to stdout.</li>
+        <li><b>Exit:</b> This will terminate the program.</li>
+        <li><b>Top 5 composers:</b> Go over the entire song database to find the top 5.</li>
+        <li><b>Most popular word:</b> Go over every song name and figure out the most popular word. In case of ties, print out all the songs. Printing out is gonna be on stdout.</li>
+    </ol>
+    <h3>Requirements:</h3>
+    <ol>
+        <li>Use the <a href="Dictionary.h">Dictionary</a> data structure to store songs and their authors.</li>
+        <li>Ensure that all functions in <a href="Dictionary.c">Dictionary.c</a> are tested and utilized.</li>
+        <li>Write a <a href="pg3.c">pg3</a> file where you will implement your music database using the dictionary.</li>
+        <li>Handle potential errors gracefully such as trying to remove a song that doesn't exist.</li>
+        <li>Ensure that the program continues running until the user chooses to exit.</li>
+    </ol>
+    <p>
+        <strong>Files for this program:</strong>
+    </p>
+    <ul>
+        <li><a href="Makefile">Makefile</a>: Makefile for compiling your code. Do not change this file.</li>
+        <li><a href="Dictionary.h">Dictionary.h</a>: The header file for your Dictionary implementation.</li>
+        <li><a href="Dictionary.c">Dictionary.c</a>: This is where you define your Dictionary data structure and implement the required functionalities.</li>
+        <li><a href="pg3.c">pg3.c</a>: This file contains the main program that uses your Dictionary to manage the music database.</li>
+    </ul>
+    <p>
+        <strong>Input and output files:</strong>
+    </p>
+    <ul>
+        <li><a href = "test1.in">test1.in</a>: This is the file you'll read from stdin</li>
+        <li><a href = "music_database.in">music_database.in</a>: This is the file that contains all the songs and their respective authors. You will read it using file reading techniques in C</li>
+        <li><a href="test1.out">test1.out</a> This is the standard output file based on test1.in</li>
+        <br>
+        <li><a href = "test2.in">test2.in</a>: This is the file you'll read from stdin</li>
+        <li><a href = "music_database.in">music_database.in</a>: This is the file that contains all the songs and their respective authors. You will read it using file reading techniques in C</li>
+        <li><a href="test2.out">test2.out</a> This is the standard output file based on test2.in</li>
+    </ul>
+    <h3>Rubrik:</h3>
+    <ul>
+        <li>10 points for well documented and commented code</li>
+        <li>10 points for the correct logic of functions in Dictionary.c</li>
+        <li>40 points for the correct implementation of Dictionary.c</li>
+        <li>5 points each for the 8 functionalities, for a total of 40 points</li>
+    </ul>
+    <h3>Submission:</h3>
+    <ul>
+        <li>Make sure that you've compiled and tested your code on the campus unix timeshare before submitting.</li>
+        <li>In the same directory where you have the program files, run the following command to create a ZIP file for submission: <code>zip -r pg3.zip Makefile Dictionary.h Dictionary.c pg3.c</code></li>
+        <li>Submit pg3.zip on Canvas under the corresponding assignment.</li>
+    </ul>
+    <hr>
+    <cite>Data from: <a href="https://www.kaggle.com/datasets/saurabhshahane/music-dataset-1950-to-2019/">Kaggle Music Database</a></cite>
+    <h4>Last modified 11/07/2023 PDT.</h4>
+    <img align="bottom" src="http://users.soe.ucsc.edu/~pang/slug-icon.gif">
+</body>
+</html>
