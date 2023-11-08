@@ -20,7 +20,7 @@
         You are tasked with developing a simple music database management application using your <a href="Dictionary.h">Dictionary.c</a> and the provided header file <a href="Dictionary.h">Dictionary.h</a>.
     </p>
     <p>
-        At the start, your application will read input from stdin. The stdin input will have a filename to read the songs and their authors, as well as different commands to execute post initialization. After reading the input and the initialization phase, your application should provide the following functionalities:
+        At the start, your application will read input from stdin. The stdin input will have a filename to read the songs and their authors, as well as different commands to execute post initialization. After reading the input and the initialization phase, your application should provide the following functionalities according to the index of commands:
     </p>
     <ol>
         <li><b>Add a Song:</b> This allows users to input a song name and its corresponding author, and add them to the dictionary, which is being used to add songs to the database.</li>
@@ -29,7 +29,7 @@
         <li><b>Find the author of a song:</b> This allows users to find a song in the database using the song's name.</li>
         <li><b>Display All Songs:</b> This will print out all the songs and their authors in the database to stdout.</li>
         <li><b>Exit:</b> This will terminate the program.</li>
-        <li><b>Top 5 composers:</b> Go over the entire song database to find the top 5.</li>
+        <li><b>Top composer:</b> Go over the entire song database to find the top composer who has the most songs. In case of ties, print out all composers.</li>
         <li><b>Most popular word:</b> Go over every song name and figure out the most popular word. In case of ties, print out all the songs. Printing out is gonna be on stdout.</li>
     </ol>
     <h3>Requirements:</h3>
@@ -54,24 +54,31 @@
     </p>
     <ul>
         <li><a href = "test1.in">test1.in</a>: This is the file you'll read from stdin</li>
-        <li><a href = "music_database.in">music_database.in</a>: This is the file that contains all the songs and their respective authors. You will read it using file reading techniques in C</li>
+        <li><a href = "test_input_db.in">test_input_db.in</a>: This is the file that contains all the songs and their respective authors. You will read it using file reading techniques in C</li>
         <li><a href="test1.out">test1.out</a> This is the standard output file based on test1.in</li>
         <br>
         <li><a href = "test2.in">test2.in</a>: This is the file you'll read from stdin</li>
         <li><a href = "music_database.in">music_database.in</a>: This is the file that contains all the songs and their respective authors. You will read it using file reading techniques in C</li>
         <li><a href="test2.out">test2.out</a> This is the standard output file based on test2.in</li>
     </ul>
-    <h3>Rubrik:</h3>
+    <h3>Rubrics:</h3>
     <ul>
         <li>10 points for well documented and commented code</li>
-        <li>10 points for the correct logic of functions in Dictionary.c</li>
-        <li>40 points for the correct implementation of Dictionary.c</li>
-        <li>5 points each for the 8 functionalities, for a total of 40 points</li>
+        <li>40 points for the correct implementation of Dictionary.c. 5 points each for the 8 functionalities, for a total of 40 points</li>
+    	<li>40 points for the correct implementation of pg3.c. There are a total of 8 functions. Each function is worth 5 points.</li>
+	<li>10 points for following all the instructions correctly.</li>
     </ul>
+    <h4>Who graded your assignment based on your last name:</h4>
+<pre>
++++:   a* - j*
++++:  k* - m*
++++:   n* - z*
+</pre>
     <h3>Submission:</h3>
     <ul>
         <li>Make sure that you've compiled and tested your code on the campus unix timeshare before submitting.</li>
-        <li>In the same directory where you have the program files, run the following command to create a ZIP file for submission: <code>zip -r pg3.zip Makefile Dictionary.h Dictionary.c pg3.c</code></li>
+        <li>In the same directory where you have the program files, run the following command to create a ZIP file for submission: <code>pg3.zip
+zip -r pg3.zip pg3</code></li>
         <li>Submit pg3.zip on Canvas under the corresponding assignment.</li>
     </ul>
     <hr>
