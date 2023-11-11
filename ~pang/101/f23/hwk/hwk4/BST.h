@@ -16,6 +16,7 @@ typedef struct Node {
 
 // Function prototypes for the BST
 Node* createNode(int value);
+Node* sortedArrayToBST(int arr[], int start, int end);
 Node* insertNode(Node* root, int value);
 Node* deleteNode(Node* root, int value);
 void inorderTraversal(Node* root);
@@ -23,3 +24,6 @@ void preorderTraversal(Node* root);
 void postorderTraversal(Node* root);
 Node* findNode(Node* root, int value);
 void freeTree(Node* root);
+
+// Bonus Points
+void levelorderTraversal(Node* root);

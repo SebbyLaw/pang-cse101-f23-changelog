@@ -3,7 +3,9 @@
 // Function to create a new Node
 Node* createNode(int value) {
 }
-
+// Function to create a BST out of a sorted array
+Node* sortedArrayToBST(int arr[], int start, int end){
+}
 // Function to insert a node in BST
 Node* insertNode(Node* root, int value) {
 }
@@ -34,4 +36,7 @@ Node* findNode(Node* root, int value) {
 
 // Function to free nodes in BST
 void freeTree(Node* root) {
+}
+// Function for levelorder traversal of BST
+void levelorderTraversal(Node* root){
 }
