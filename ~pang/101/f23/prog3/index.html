@@ -11,7 +11,17 @@
         </p>
         <img src="http://users.soe.ucsc.edu/~pang/images/line.jpg" width="700" height="10">
     </center>
-    <h3>Objective:</h3>
+<H3>
+Changelog:
+</H3>
+<ul>
+<li>
+<b>Nov 13, 2023:</b>
+Provide more input examples.
+<br>
+</li>
+</ul>    
+<h3>Objective:</h3>
     <p>
         To create a program that allows users to manage a music database with functionalities such as adding, removing, updating, finding, and displaying songs, using the Dictionary ADT.
     </p>
@@ -22,23 +32,62 @@
     <p>
         At the start, your application will read input from stdin. The stdin input will have a filename to read the songs and their authors, as well as different commands to execute post initialization. After reading the input and the initialization phase, your application should provide the following functionalities according to the index of commands:
     </p>
-<ol>
+	<ol>
     <li><b>Add a Song:</b> This allows users to input a song name and its corresponding author, and add them to the dictionary, which is being used to add songs to the database.
-        <br><i>Example: Input '1', then 'Shape of You', and then 'Ed Sheeran' to add the song to the database.</i></li>
-    <li><b>Remove a Song:</b> This enables users to delete a song from the database using the song's name.
-        <br><i>Example: Input '2' and then 'Shape of You' to remove the song from the database.</i></li>
-    <li><b>Update Song Details:</b> This lets users update the author of a song using the song's name.
-        <br><i>Example: Input '3', then 'Photograph', and then 'Unknown' to update the author's name.</i></li>
-    <li><b>Find the author of a song:</b> This allows users to find a song in the database using the song's name.
-        <br><i>Example: Input '4' and then 'Photograph' to find the author of the song.</i></li>
+        <br><br><i>Example: Input '1', then 'Shape of You', and then 'Ed Sheeran' to add the song to the database.</i></li>
+    <br><li><b>Remove a Song:</b> This enables users to delete a song from the database using the song's name.
+        <br><br><i>Example: Input '2' and then 'Shape of You' to remove the song from the database.</i></li>
+    <br><li><b>Update Song Details:</b> This lets users update the author of a song using the song's name.
+        <br><br><i>Example: Input '3', then 'Photograph', and then 'Unknown' to update the author's name.</i></li>
+    <br><li><b>Find the author of a song:</b> This allows users to find a song in the database using the song's name.
+        <br><br><i>Example: Input '4' and then 'Photograph' to find the author of the song. If the song is found, the output should be in the format 'Found song: SONG_NAME by AUTHOR_NAME'. If the song is not found, the output should be 'Song not found!'.</i>
+        <br><br><i>Output Example if song is found:</i>
+        <pre>Found song: Photograph by Unknown</pre>
+        <i>Output Example if song is not found:</i>
+        <pre>Song not found!</pre>
+    </li>
     <li><b>Display All Songs:</b> This will print out all the songs and their authors in the database to stdout.
-        <br><i>Example: Input '5' to display all songs and their authors.</i></li>
-    <li><b>Exit:</b> This will terminate the program.
-        <br><i>Example: Input '6' to exit the program.</i></li>
+        <br><br><i>Example: Input '5' to display all songs and their authors. The format for each song should be 'SONG_NAME by AUTHOR_NAME' on a new line for each song.</i>
+        <br><br><i>Output Example:</i>
+        <pre>
+i believe of by frankie laine
+mohabbat bhi jhoothi by Ed Sheeran
+Photograph by Unknown
+patricia by frankie laine
+cry by Ed Sheeran
+        </pre>
+    </li>
     <li><b>Top Composer:</b> Go over the entire song database to find the top composer who has the most songs. In case of ties, print out all composers.
-        <br><i>Example: Input '7' to display the top composer or composers in case of a tie.</i></li>
+        <br><br><i>Example: Input '6' to display the top composer or composers in case of a tie. The format should list each author followed by the count of songs in the format 'AUTHOR_NAME: COUNT song(s)'.</i>
+        <br><br><i>Output Example:</i>
+        <pre>
+Ed Sheeran: 2 song(s)
+frankie laine: 2 song(s)
+        </pre>
+    </li>
     <li><b>Most Popular Word:</b> Go over every song name and figure out the most popular word. In case of ties, print out all the songs. Printing out is gonna be on stdout.
-        <br><i>Example: Input '8' to find the most popular word in song names.</i></li>
+        <br><br><i>Example: Input '7' to find the most popular word in song names. The format should list each word followed by the count of occurrences in the format 'WORD: COUNT occurrence(s)'.</i>
+        <br><br><i>Output Example:</i>
+        <pre>
+jhoothi: 1 occurrence(s)
+believe: 1 occurrence(s)
+mohabbat: 1 occurrence(s)
+bhi: 1 occurrence(s)
+of: 1 occurrence(s)
+i: 1 occurrence(s)
+patricia: 1 occurrence(s)
+cry: 1 occurrence(s)
+        </pre>
+    </li>
+    <li><b>Exit:</b> This will terminate the program.
+        <br><br><i>Example: Input '8' to exit the program. The output should be a simple confirmation message.</i>
+        <br><br><i>Output Example:</i>
+        <pre>Goodbye!</pre>
+    </li>
+    <li><b>Invalid Input Handling:</b> If the input number is not between 1 and 8, prompt the user to make a valid selection.
+        <br><br><i>Output Example for invalid input:</i>
+        <pre>Invalid choice! Please select a valid option.</pre>
+    </li>
 </ol>
     <h3>Requirements:</h3>
     <ol>
