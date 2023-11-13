@@ -17,21 +17,29 @@
     </p>
     <h3>Description:</h3>
     <p>
-        You are tasked with developing a simple music database management application using your <a href="Dictionary.h">Dictionary.c</a>, <a href="HashTable.c">HashTable.c</a> and the provided header files <a href="Dictionary.h">Dictionary.h</a>, <a href="HashTable.h">HashTable.h</a>.
+        You are tasked with developing a simple music database management application using your <a href="Dictionary.c">Dictionary.c</a>, <a href="HashTable.c">HashTable.c</a> and the provided header files <a href="Dictionary.h">Dictionary.h</a>, <a href="HashTable.h">HashTable.h</a>.
     </p>
     <p>
         At the start, your application will read input from stdin. The stdin input will have a filename to read the songs and their authors, as well as different commands to execute post initialization. After reading the input and the initialization phase, your application should provide the following functionalities according to the index of commands:
     </p>
-    <ol>
-        <li><b>Add a Song:</b> This allows users to input a song name and its corresponding author, and add them to the dictionary, which is being used to add songs to the database.</li>
-        <li><b>Remove a Song:</b> This enables users to delete a song from the database using the song's name.</li>
-        <li><b>Update Song Details:</b> This lets users update the author of a song using the song's name.</li>
-        <li><b>Find the author of a song:</b> This allows users to find a song in the database using the song's name.</li>
-        <li><b>Display All Songs:</b> This will print out all the songs and their authors in the database to stdout.</li>
-        <li><b>Exit:</b> This will terminate the program.</li>
-        <li><b>Top composer:</b> Go over the entire song database to find the top composer who has the most songs. In case of ties, print out all composers.</li>
-        <li><b>Most popular word:</b> Go over every song name and figure out the most popular word. In case of ties, print out all the songs. Printing out is gonna be on stdout.</li>
-    </ol>
+<ol>
+    <li><b>Add a Song:</b> This allows users to input a song name and its corresponding author, and add them to the dictionary, which is being used to add songs to the database.
+        <br><i>Example: Input '1', then 'Shape of You', and then 'Ed Sheeran' to add the song to the database.</i></li>
+    <li><b>Remove a Song:</b> This enables users to delete a song from the database using the song's name.
+        <br><i>Example: Input '2' and then 'Shape of You' to remove the song from the database.</i></li>
+    <li><b>Update Song Details:</b> This lets users update the author of a song using the song's name.
+        <br><i>Example: Input '3', then 'Photograph', and then 'Unknown' to update the author's name.</i></li>
+    <li><b>Find the author of a song:</b> This allows users to find a song in the database using the song's name.
+        <br><i>Example: Input '4' and then 'Photograph' to find the author of the song.</i></li>
+    <li><b>Display All Songs:</b> This will print out all the songs and their authors in the database to stdout.
+        <br><i>Example: Input '5' to display all songs and their authors.</i></li>
+    <li><b>Exit:</b> This will terminate the program.
+        <br><i>Example: Input '6' to exit the program.</i></li>
+    <li><b>Top Composer:</b> Go over the entire song database to find the top composer who has the most songs. In case of ties, print out all composers.
+        <br><i>Example: Input '7' to display the top composer or composers in case of a tie.</i></li>
+    <li><b>Most Popular Word:</b> Go over every song name and figure out the most popular word. In case of ties, print out all the songs. Printing out is gonna be on stdout.
+        <br><i>Example: Input '8' to find the most popular word in song names.</i></li>
+</ol>
     <h3>Requirements:</h3>
     <ol>
 	<li>Implement the ht_hash function in <a href="HashTable.c">HashTable.c</a> </li>
