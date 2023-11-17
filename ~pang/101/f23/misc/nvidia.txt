@@ -1,0 +1,56 @@
+Date:      Wed 11-12 Nov 29
+Location:  E2-180
+
+Speakers:  
+
+Sharon Clay, VP of Hardware Infrastructure
+Robert Hero, Senior Manager GPU Cluster Bringup
+Nicole Magnus, Senior Technical Program Manager
+
+Title:
+
+Infrastructure -- Enabling the Backbone for AI and High-Performance Computing
+Environments and Hardware
+
+Abstract:
+
+High Performance Computing Environments and the hardware used in them continue to
+evolve rapidly.  The key to keeping up with the scale of change is to have an
+incredible software infrastructure.  The Hardware Infrastructure organization
+develops critical workflows to enable engineers across the company to achieve the
+impossible - from training the newest deep learning models in datacenters with
+thousands of GPUs to building the next-generation chip architectures. 
+
+One particularly challenging problem is to identify and resolve DL model
+performance issues at scale.  Performance Monitors are built into GPU hardware
+and are critical to analyzing and improving performance of applications.  While
+the underlying hardware is the same, the approach to acquiring and analyzing the
+performance data is vastly different based on the scale.  We will discuss how we
+enable analysis from thousands of GPUs in a cluster, down to a single GPU, and
+the supporting infrastructure that is required to ensure we can train the next
+great DL model.
+
+Please join us to hear not only about this, but other exciting opportunities we
+have.
+
+---
+
+Speakers Bio:
+
+Sharon Clay is VP of the Hardware Infrastructure organization and has been with Nvidia for 23 years,
+previously working at SGI.  She received her masters from UCSC in 1992 focused on Neural Networks and NLP.
+Sharon's vision and passion for automating processes led to the formation of the infrastructure group within Nvidia.
+The organization is now comprised of hundreds of engineers whose expertise spans all disciplines of computer science
+and are innovating every aspect of NVidia HW and SW engineering.
+
+Nicole Magnus is a Senior Technical Program Manager with the Hardware Infrastructure organization focused on innovating
+the component integration and CI/CD used by Nvidia's HW and SW teams. The Component Integration team creates tools that
+enable the entire company to collaborate efficiently with "Speed of Light" code verifications and submissions. She has
+been with Nvidia for 3 years. Nicole received her bachelor's in Computer Engineering from Prairie View A&M University in 1993.
+
+Robert Hero is a Senior Manager within the Hardware Infrastructure organization, currently focused on building GPU
+Datacenters and supporting tools for enabling NVIDiai's LLM training. Before that Robert has built tools to enable
+predictions of application performance through the chip design process, closely working with architects, hardware and
+software engineers across the company.   He has been with Nvidia for 13 years, and had done several NVidia internships
+prior to that.  Robert received his masters from UCSC in 2006 focused on Volume Visualization of Unstructured Data.
+
