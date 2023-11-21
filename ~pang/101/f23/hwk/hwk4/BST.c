@@ -44,7 +44,7 @@ Node* findNode(Node* root, int value) {
 }
 
 // Function to free nodes in BST
-void freeTree(Node* root) {
+void freeTree(Node** root) {
 }
 // Function for levelorder traversal of BST
 void levelorderTraversal(Node* root){
