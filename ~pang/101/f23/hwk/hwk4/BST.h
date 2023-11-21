@@ -23,7 +23,7 @@ void inorderTraversal(Node* root);
 void preorderTraversal(Node* root);
 void postorderTraversal(Node* root);
 Node* findNode(Node* root, int value);
-void freeTree(Node* root);
+void freeTree(Node** root);
 
 // Bonus Points
 void levelorderTraversal(Node* root);
