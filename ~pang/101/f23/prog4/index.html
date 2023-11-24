@@ -54,9 +54,17 @@
     3
     </pre>
     <p>
-        The first entry in <a href="test1.in"><code>test1.in</code></a> provides city information necessary for the program. 
-    
-    For instance, the <a href="city1.in"><code>city1.in</code></a> file details city connections and is structured as follows:
+The first line specifies a filename that contains connections between cities.
+    Subsequent numbers are commands for specific operations:
+    </p>
+    <ul>
+        <li>'0' instructs the program to perform the BFS (Breadth-First Search) algorithm.</li>
+        <li>'1' is a directive to run Dijkstra's algorithm.</li>
+        <li>'2' followed by another number indicates a bonus challenge; the succeeding number gives the 'K' value for this task.</li>
+        <li>'3' signals the program to terminate.</li>
+    </ul>
+    <p>
+The <a href="city1.in"><code>city1.in</code></a> file details city connections and is structured as follows:
     </p>
     <pre>
     5
@@ -69,15 +77,6 @@
     3,4,1
     </pre>
     '5' indicates the total number of cities, '6' represents the number of links between them, and each line like '0,1,4' denotes a time of '4' between cities '0' and '1'.
-    <p>
-    Subsequent numbers are commands for specific operations:
-    </p>
-    <ul>
-        <li>'0' instructs the program to perform the BFS (Breadth-First Search) algorithm.</li>
-        <li>'1' is a directive to run Dijkstra's algorithm.</li>
-        <li>'2' followed by another number indicates a bonus challenge; the succeeding number gives the 'K' value for this task.</li>
-        <li>'3' signals the program to terminate.</li>
-    </ul>
     <p>
         The files <a href="queue.c">queue.c</a> and <a href="queue.h">queue.h</a> are supplied. The tasks include completing the <a href="bfs.c">bfs.c</a>, <a href="dijkstra.c">dijkstra.c</a>, and <a href="main.c">main.c</a> files as per the requirements dictated by the input files.
     </p>
