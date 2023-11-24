@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Homework Assignment: Graph Traversal Algorithms</title>
+</head>
+
+<body background="slug.gif">
+    <center>
+        <p>
+            <h2><b>Homework Assignment: Graph Traversal Algorithms</b></h2>
+            <h3>Due before midnight, December 5th, 11:59 PM<br>Late submissions will not be accepted/graded</h3>
+        </p>
+        <img src="http://users.soe.ucsc.edu/~pang/images/line.jpg" width="700" height="10">
+    </center>
+    <h3>Introduction:</h3>
+    <p>
+        In this assignment, you will delve into graph traversal algorithms by implementing two fundamental algorithms: Breadth-First Search (BFS) and Dijkstra's algorithm. Your task is to apply these algorithms to a network of cities connected by railways to determine the shortest travel times under different constraints.
+    </p>
+    <h3>Problem Description:</h3>
+    <p>
+        Consider a set of `N` cities, numbered from `0` to `N-1`, interconnected by railways. The connections between cities are given as triples in the form `(u, v, w)`, where `u` is the starting city, `v` is the destination city, and `w` is the travel time in hours from city `u` to city `v`. Here are your tasks:
+    </p>
+    <h3>Tasks:</h3>
+    <h4>Task 1: Uniform Travel Time with BFS</h4>
+    <p>
+        Assume the travel time between any two directly connected cities is uniform (1 hour), employ the BFS algorithm to calculate the minimum time required for a traveler to reach city `N-1` from city `0`.
+        <br><br>
+        <strong>Objective: </strong> Implement the BFS algorithm to determine the shortest path in terms of the number of cities traversed.
+    </p>
+    <h4>Task 2: Varied Travel Time with Dijkstra's Algorithm</h4>
+    <p>
+        Now, consider the actual travel times `w` between cities. Use Dijkstra's algorithm to compute the minimum travel time needed for a traveler to go from city `0` to city `N-1`.
+        <br><br>
+        <strong>Objective: </strong>Implement Dijkstra's algorithm to find the shortest path in terms of travel time.
+    </p>
+    <h4>Bonus Challenge</h4>
+    <p>
+        Modify your implementation to introduce a constraint: the traveler cannot pass through more than `K` cities. Notice that you should include the starting city in the count of cities visited.
+        <br><br>
+        <strong>Objective: </strong> Adapt your Dijkstra's algorithm to account for the maximum number of cities (`K`) that can be visited during the journey.
+    </p>
+    <h3>Input Example</h3>
+    At the start, your application will read input from stdin, as we did in the previous homeworks.
+    <p>
+        The input file <a href="test1.in"><code>test1.in</code></a> is an example with the following sequence of instructions for the program:
+    </p>
+    <pre>
+    city1.in
+    0
+    1
+    2
+    1
+    3
+    </pre>
+    <p>
+        The first entry in <a href="test1.in"><code>test1.in</code></a> provides city information necessary for the program. 
+    
+    For instance, the <a href="city1.in"><code>city1.in</code></a> file details city connections and is structured as follows:
+    </p>
+    <pre>
+    5
+    6
+    0,1,4
+    0,2,2
+    1,2,1
+    1,3,10
+    2,4,3
+    3,4,1
+    </pre>
+    '5' indicates the total number of cities, '6' represents the number of links between them, and each line like '0,1,4' denotes a time of '4' between cities '0' and '1'.
+    <p>
+    Subsequent numbers are commands for specific operations:
+    </p>
+    <ul>
+        <li>'0' instructs the program to perform the BFS (Breadth-First Search) algorithm.</li>
+        <li>'1' is a directive to run Dijkstra's algorithm.</li>
+        <li>'2' followed by another number indicates a bonus challenge; the succeeding number gives the 'K' value for this task.</li>
+        <li>'3' signals the program to terminate.</li>
+    </ul>
+    <p>
+        The files <a href="queue.c">queue.c</a> and <a href="queue.h">queue.h</a> are supplied. The tasks include completing the <a href="bfs.c">bfs.c</a>, <a href="dijkstra.c">dijkstra.c</a>, and <a href="main.c">main.c</a> files as per the requirements dictated by the input files.
+    </p>
+
+    <h3>Input/Output files example</h3>
+    <ul>
+    <li><a href="test1.in">test1.in</a>: This input file contains test data for your program to process.</li>
+    <li><a href="city1.in">city1.in</a>: This file provides city information and tasks to run specific algorithms like BFS or Dijkstra's.</li>
+    <li><a href="test1.out">test1.out</a>: The expected output after your program processes 'test1.in'.</li>
+    <li><a href="test2.in">test2.in</a>: Another set of test data for your program.</li>
+    <li><a href="city2.in">city2.in</a>: Similar to 'city1.in', this contains different city information and tasks for your algorithms.</li>
+    <li><a href="test2.out">test2.out</a>: The expected output after your program processes 'test2.in'.</li>
+    </ul>
+    <H3>Files for this program:</H3>
+    <p>The following files are provided to you, and should all be submitted with your work:</p>
+    <ul>
+        <li><a href="Makefile">Makefile</a>: This is the Makefile for compiling your code. You are not required to modify this file.</li>
+        <li><a href="queue.h">queue.h</a>: This header file contains declarations for queue functions. You do not need to alter this file.</li>
+        <li><a href="queue.c">queue.c</a>: The implementation of the queue data structure is in this file. It should not be modified.</li>
+        <li><a href="bfs.h">bfs.h</a>: This header file contains the function declarations for the breadth-first search algorithm. Do not change this file.</li>
+        <li><a href="bfs.c">bfs.c</a>: In this file, you will implement the breadth-first search algorithm as specified in bfs.h.</li>
+        <li><a href="dijkstra.h">dijkstra.h</a>: This file contains the declarations for the Dijkstra's algorithm functions. It should remain unchanged.</li>
+        <li><a href="dijkstra.c">dijkstra.c</a>: You will implement Dijkstra's algorithm in this file based on the specifications in dijkstra.h.</li>
+        <li><a href="main.c">main.c</a>: The main driver code for your program will be written here. This is where you will utilize the implemented algorithms.</li>
+    </ul>
+    <h3>Rubric for Program Assessment</h3>
+    <ul>
+        <li>30 points for BFS implementation: Correct implementation and execution.</li>
+        <li>30 points for Dijkstra's algorithm implementation: Correct implementation and execution.</li>
+        <li>30 points for main.c implementation:
+            <ul>
+                <li>20 points: Correct file reading and graph construction.</li>
+                <li>10 points: Correct program flow and command handling.</li>
+            </ul>
+        </li>
+        <li>10 points for well documented and commented code.</li>
+        <li>10 points for bonus task implementation: Correct handling and execution of the 'K' value challenge.</li>
+    </ul>
+    <h4>Who graded your assignment based on your last name:</h4>
+    <pre>
+    +++:   a* - j*
+    +++:  k* - m*
+    +++:   n* - z*
+    </pre>
+    <h3>Submission:</h3>
+    <ul>
+        <li>Make sure that you've compiled and tested your code on the campus unix timeshare before submitting.</li>
+        <li>In the same directory where you have the program files, run the following command to create a ZIP file for submission: <code>zip -r prog4.zip</code></li>
+        <li>Submit prog4.zip on Canvas under the corresponding assignment.</li>
+    </ul>
+    <hr>
+    <h4>Last modified 11/23/2023 PDT.</h4>
+    <img align="bottom" src="http://users.soe.ucsc.edu/~pang/slug-icon.gif">
+</body>
+
+</html>
