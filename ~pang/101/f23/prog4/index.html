@@ -17,8 +17,7 @@
 Changelog:
 </H3>
 <ul>
-    <li><b>Dec 1, 2023:</b>test2.out has been corrected.</li>
-    <li><b>Dec 1, 2023:</b>Please feel free to use other methods to implement the Bouns part if you found using Dijkstra's algorithm to do that is too complex. You can modify the bfs.h accordingly.</li>
+    <li><b>Dec 1, 2023:</b>Bonus challenge has been changed to a easier one. You don't need to do this if you have finished the previous one.</li>
     <li><b>Nov 28, 2023:</b>Clarifications: For queue, you can set its capacity to the number of cities. In C, you can use INT_MAX to present the maximum integer. </li>
 </ul>
     <h3>Introduction:</h3>
@@ -47,9 +46,8 @@ Changelog:
 
 <h4>Bonus Challenge</h4>
 <p>
-    Let's consider that each edge in the graph is directed. For each vertex, please show the shortest distance from vertex 0 to that vertex, 
-    and also the shortest distance from each vertex to the last vertex (vertex n-1). 
-    The information will be presented as follows:
+    Let's consider that each edge in the graph is directed. First, display the shortest distances from vertex 0 to all other vertices. Following that, present the shortest distances from each vertex to vertex n-1. 
+    The information needs to be presented as follows:
     <br><br>
     Vertex:[Vertex Index],Distance:[Distance Value]<br><br>
     If a vertex is not reachable from vertex 0, or if it's not possible to reach vertex n-1 from a given vertex, the distance should be displayed as -1.
@@ -111,7 +109,7 @@ The <a href="city1.in"><code>city1.in</code></a> file details city connections a
         <li><a href="Makefile">Makefile</a>: This is the Makefile for compiling your code. You are not required to modify this file.</li>
         <li><a href="queue.h">queue.h</a>: This header file contains declarations for queue functions. You do not need to alter this file.</li>
         <li><a href="queue.c">queue.c</a>: The implementation of the queue data structure is in this file. It should not be modified.</li>
-        <li><a href="bfs.h">bfs.h</a>: This header file contains the function declarations for the breadth-first search algorithm. Please do not change this file if you want to use BFS to do the bonus part.</li>
+        <li><a href="bfs.h">bfs.h</a>: This header file contains the function declarations for the breadth-first search algorithm. Please do not change this file.</li>
         <li><a href="bfs.c">bfs.c</a>: In this file, you will implement the breadth-first search algorithm as specified in bfs.h.</li>
         <li><a href="dijkstra.h">dijkstra.h</a>: This file contains the declarations for the Dijkstra's algorithm functions. It should remain unchanged.</li>
         <li><a href="dijkstra.c">dijkstra.c</a>: You will implement Dijkstra's algorithm in this file based on the specifications in dijkstra.h.</li>
@@ -128,7 +126,7 @@ The <a href="city1.in"><code>city1.in</code></a> file details city connections a
             </ul>
         </li>
         <li>10 points for well documented and commented code.</li>
-        <li>10 points for bonus task implementation: Correct handling and execution of the 'K' value challenge.</li>
+        <li>10 points for bonus task implementation.</li>
     </ul>
     <h4>Who graded your assignment based on your last name:</h4>
     <pre>
