@@ -44,12 +44,16 @@ Changelog:
         <br>
 	Note: You can either use array or heap to implement Dijkstra's algorithm.
     </p>
-    <h4>Bonus Challenge</h4>
-    <p>
-        Modify your implementation to introduce a constraint: the traveler cannot pass through more than `K` cities. Notice that you should include the starting city in the count of cities visited.
-        <br><br>
-        <strong>Objective: </strong> Adapt your Dijkstra's algorithm or BFS to account for the maximum number of cities (`K`) that can be visited during the journey.
-    </p>
+
+<h4>Bonus Challenge</h4>
+<p>
+    Let's consider that each edge in the graph is directed. For each vertex, please show the shortest distance from vertex 0 to that vertex, 
+    and also the shortest distance from each vertex to the last vertex (vertex n-1). 
+    The information will be presented as follows:
+    <br><br>
+    Vertex:[Vertex Index],Distance:[Distance Value]<br><br>
+    If a vertex is not reachable from vertex 0, or if it's not possible to reach vertex n-1 from a given vertex, the distance should be displayed as -1.
+</p>
     <h3>Input Example</h3>
     At the start, your application will read input from stdin, as we did in the previous homeworks.
     <p>
@@ -58,8 +62,6 @@ Changelog:
     <pre>
     city1.in
     0
-    1
-    2
     1
     3
     </pre>
@@ -70,7 +72,7 @@ The first line specifies a filename that contains connections between cities.
     <ul>
         <li>'0' instructs the program to perform the BFS (Breadth-First Search) algorithm.</li>
         <li>'1' is a directive to run Dijkstra's algorithm.</li>
-        <li>'2' followed by another number indicates a bonus challenge; the succeeding number gives the 'K' value for this task.</li>
+	<li>'2' is a directive to run the bonus task. Example inputs can be found in test3.in.
         <li>'3' signals the program to terminate.</li>
     </ul>
     <p>
@@ -99,6 +101,9 @@ The <a href="city1.in"><code>city1.in</code></a> file details city connections a
     <li><a href="test2.in">test2.in</a>: Another set of test data for your program.</li>
     <li><a href="city2.in">city2.in</a>: Similar to 'city1.in', this contains different city information and tasks for your algorithms.</li>
     <li><a href="test2.out">test2.out</a>: The expected output after your program processes 'test2.in'.</li>
+    <li><a href="test3.in">test3.in</a>: Another set of test data for your program. </li>
+    <li><a href="city3.in">city3.in</a>: Similar to 'city1.in'. </li>
+    <li><a href="test3.out">test3.out</a>: The expected output after your program processes 'test3.in'</li>
     </ul>
     <H3>Files for this program:</H3>
     <p>The following files are provided to you, and should all be submitted with your work:</p>
@@ -106,7 +111,7 @@ The <a href="city1.in"><code>city1.in</code></a> file details city connections a
         <li><a href="Makefile">Makefile</a>: This is the Makefile for compiling your code. You are not required to modify this file.</li>
         <li><a href="queue.h">queue.h</a>: This header file contains declarations for queue functions. You do not need to alter this file.</li>
         <li><a href="queue.c">queue.c</a>: The implementation of the queue data structure is in this file. It should not be modified.</li>
-        <li><a href="bfs.h">bfs.h</a>: This header file contains the function declarations for the breadth-first search algorithm. You may change this file if you want to use BFS to do the bonus part.</li>
+        <li><a href="bfs.h">bfs.h</a>: This header file contains the function declarations for the breadth-first search algorithm. Please do not change this file if you want to use BFS to do the bonus part.</li>
         <li><a href="bfs.c">bfs.c</a>: In this file, you will implement the breadth-first search algorithm as specified in bfs.h.</li>
         <li><a href="dijkstra.h">dijkstra.h</a>: This file contains the declarations for the Dijkstra's algorithm functions. It should remain unchanged.</li>
         <li><a href="dijkstra.c">dijkstra.c</a>: You will implement Dijkstra's algorithm in this file based on the specifications in dijkstra.h.</li>
