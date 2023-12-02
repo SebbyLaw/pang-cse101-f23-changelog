@@ -13,8 +13,7 @@
  * @param graph The adjacency matrix of the graph.
  * @param num_cities The number of cities (nodes) in the graph.
  * @param src The index of the source city.
- * @param K The limit of cities to visit.
  */
-void dijkstra(int **graph, int num_cities, int src, int K);
+void dijkstra(int **graph, int num_cities, int src);
 
 #endif // DIJKSTRA_H
