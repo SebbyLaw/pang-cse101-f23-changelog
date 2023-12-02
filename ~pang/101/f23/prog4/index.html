@@ -17,6 +17,8 @@
 Changelog:
 </H3>
 <ul>
+    <li><b>Dec 1, 2023:</b>test2.out has been corrected.</li>
+    <li><b>Dec 1, 2023:</b>Please feel free to use BFS to implement the Bouns part if you found using Dijkstra's algorithm to do that is too complex. You can modify the bfs.h accordingly.</li>
     <li><b>Nov 28, 2023:</b>Clarifications: For queue, you can set its capacity to the number of cities. In C, you can use INT_MAX to present the maximum integer. </li>
 </ul>
     <h3>Introduction:</h3>
@@ -46,7 +48,7 @@ Changelog:
     <p>
         Modify your implementation to introduce a constraint: the traveler cannot pass through more than `K` cities. Notice that you should include the starting city in the count of cities visited.
         <br><br>
-        <strong>Objective: </strong> Adapt your Dijkstra's algorithm to account for the maximum number of cities (`K`) that can be visited during the journey.
+        <strong>Objective: </strong> Adapt your Dijkstra's algorithm or BFS to account for the maximum number of cities (`K`) that can be visited during the journey.
     </p>
     <h3>Input Example</h3>
     At the start, your application will read input from stdin, as we did in the previous homeworks.
@@ -104,7 +106,7 @@ The <a href="city1.in"><code>city1.in</code></a> file details city connections a
         <li><a href="Makefile">Makefile</a>: This is the Makefile for compiling your code. You are not required to modify this file.</li>
         <li><a href="queue.h">queue.h</a>: This header file contains declarations for queue functions. You do not need to alter this file.</li>
         <li><a href="queue.c">queue.c</a>: The implementation of the queue data structure is in this file. It should not be modified.</li>
-        <li><a href="bfs.h">bfs.h</a>: This header file contains the function declarations for the breadth-first search algorithm. Do not change this file.</li>
+        <li><a href="bfs.h">bfs.h</a>: This header file contains the function declarations for the breadth-first search algorithm. You may change this file if you want to use BFS to do the bonus part.</li>
         <li><a href="bfs.c">bfs.c</a>: In this file, you will implement the breadth-first search algorithm as specified in bfs.h.</li>
         <li><a href="dijkstra.h">dijkstra.h</a>: This file contains the declarations for the Dijkstra's algorithm functions. It should remain unchanged.</li>
         <li><a href="dijkstra.c">dijkstra.c</a>: You will implement Dijkstra's algorithm in this file based on the specifications in dijkstra.h.</li>
